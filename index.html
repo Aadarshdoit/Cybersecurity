@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Password Strength Analyzer & Breach Checker</h2>
+
+<form method="POST">
+    <input type="password" name="password" placeholder="Enter Password" required>
+    <button type="submit">Check</button>
+</form>
+
+{% if strength %}
+    <h3>Strength: {{ strength }}</h3>
+
+    {% for r in remarks %}
+        <p>{{ r }}</p>
+    {% endfor %}
+
+    <h3>Breach Status: {{ breach_status }}</h3>
+{% endif %}
+
+</body>
+</html>
